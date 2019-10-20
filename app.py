@@ -38,7 +38,13 @@ def respond():
 	        count += 1
 
 	myJSON = {"events": events}
-	return jsonify(myJSON)
+
+	response = app.response_class(
+        response=json.dumps(myJSON),
+        status=200,
+        mimetype='application/json'
+    )
+	return response
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
