@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from pyquery import PyQuery as pq
+import json
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
