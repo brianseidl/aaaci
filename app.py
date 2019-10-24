@@ -99,7 +99,7 @@ def _format_date(event):
 def _format_date_string(date_str, term):
     MONTH = {
         "January":   "01",
-        "February":   "02",
+        "February":  "02",
         "March":     "03",
         "April":     "04",
         "May":       "05",
