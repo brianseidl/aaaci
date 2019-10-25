@@ -52,10 +52,11 @@ def _scott_scrape():
             conditionString = rowtd1data
 
             if shouldPrint:
-                    data = {}
-                    data['term'] = term
-                    data['date'] = rowtd1data
-                    data['description'] = rowtd2data
+                    data = {
+                        "date": rowtd1data,
+                        "term": term.lower(),
+                        "description": rowtd2data.lower()
+                    }
 
                     events.append(data)
             count += 1
