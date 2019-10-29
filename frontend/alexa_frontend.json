@@ -1,0 +1,259 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "adelphi academic calendar",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "Cancel",
+                        "Nevermind",
+                        "Main Menu",
+                        "Go back"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "What do I do",
+                        "How do I use this",
+                        "Help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "Adelphi Menu",
+                        "Open Adelphi Academic Calendar "
+                    ]
+                },
+                {
+                    "name": "CheckEvent",
+                    "slots": [
+                        {
+                            "name": "event",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{event}"
+                            ]
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{time}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "when do {event}",
+                        "When are {event}",
+                        "When does {event}",
+                        "when do {event} begin",
+                        "When does {event} begin",
+                        "When do {event} start",
+                        "When does {event} start",
+                        "What day is {event}",
+                        "When is {event}"
+                    ]
+                },
+                {
+                    "name": "CheckDay",
+                    "slots": [
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{day}"
+                            ]
+                        },
+                        {
+                            "name": "endDay",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "what's happening {day}",
+                        "what is happening {day}",
+                        "check {day}",
+                        "Is there anything between {day} and {endDay}",
+                        "Is there anything on {day}",
+                        "What is going on on {day}",
+                        "What is going on {day}",
+                        "What is between {day} and {endDay}",
+                        "What is during {day}",
+                        "Check Day {day}",
+                        "Check Date {day}",
+                        "What is on {day}"
+                    ]
+                },
+                {
+                    "name": "CheckDuration",
+                    "slots": [
+                        {
+                            "name": "event",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{event}"
+                            ]
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{time}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "How many days until {event}",
+                        "How much longer until {event}",
+                        "How long until {event}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "CheckEvent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "event",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1564640673731.48432889635"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1357224422021.59191838964"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CheckDay",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.357109800827.992976664640"
+                            }
+                        },
+                        {
+                            "name": "endDay",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "CheckDuration",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "event",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.68340625522.1125181699135"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1114746121390.1172238798278"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1564640673731.48432889635",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What event are you looking for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.357109800827.992976664640",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What day would you like me to check?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1357224422021.59191838964",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What term would you like me to check?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "You must specify an academic term, such as Fall Two-thousand and Nineteen"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.68340625522.1125181699135",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What event should I look for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1114746121390.1172238798278",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What term would you like me to check?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "You must specify an Academic term, such as Fall Two-Thousand and Nineteen"
+                    }
+                ]
+            }
+        ]
+    }
+}
